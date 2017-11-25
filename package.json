@@ -4,7 +4,7 @@
   "description": "Promiser is simple callback wrapper library. It generate, store and create a promise for any callback and pass arguments as expected.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "keywords": [
     "promise",
@@ -19,5 +19,9 @@
     "url": "https://github.com/domino2/promiser.git"
   },
   "author": "domino2",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1"
+  }
 }
