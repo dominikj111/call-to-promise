@@ -1,5 +1,5 @@
 {
-  "name": "promiser",
+  "name": "call-to-promise",
   "version": "1.0.0",
   "description": "Promiser is simple callback wrapper library. It generate, store and create a promise for any callback and pass arguments as expected.",
   "main": "index.js",
@@ -12,7 +12,9 @@
     "wrapper",
     "promise-store",
     "callback-wrapper",
-    "promiser"
+    "promiser",
+    "callback-to-promise",
+    "call-to-promise"
   ],
   "repository": {
     "type": "git",
