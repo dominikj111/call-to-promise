@@ -26,9 +26,11 @@ function Deferred() {
 		return there.__pointerTestingProperty === this.__pointerTestingProperty
 	}
 
-	this.promise = new Promise((s, f) => {
-		this.resolve = function() { closeIt(true); s.apply(this, arguments) } 
-		this.reject  = function() { closeIt(false); f.apply(this, arguments) }
+	let me = this
+
+	this.promise = new Promise(function(s, f){
+		me.resolve = function() { closeIt(true); s.apply(me, arguments) } 
+		me.reject  = function() { closeIt(false); f.apply(me, arguments) }
 	})
 }
 
