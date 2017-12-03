@@ -102,4 +102,16 @@ describe('Promiser', () => {
 			promiser.when('ex-test-2').then(() => {}, () => {})
 		})
 	})
+	describe('Using promiser as a local object', () => {
+		it('should pass when two promisers created and two promises with same id resolved', () => {
+
+			let promiser2 = require('../src/promiser.js').build()
+
+			promiser.when('dupl-id').then((r) => { expect(r).to.eql(1) })
+			promiser2.when('dupl-id').then((r) => { expect(r).to.eql(2) })
+
+			promiser.successfn('dupl-id')(1)
+			promiser2.successfn('dupl-id')(2)
+		})
+	})
 })

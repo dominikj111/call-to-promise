@@ -2,21 +2,31 @@
 
 let simdef = require('./simpledefer.js')
 
-let promisesCollection = {}
+let globalCollection = {}
 
-function get(id){
-	if(!promisesCollection[id]) promisesCollection[id] = simdef.defer()
-	return promisesCollection[id]
+function get(id, collection){
+	if(!collection[id]) collection[id] = simdef.defer()
+	return collection[id]
 }
 
-exports.id = get
+function getPromise(id, collection){
+	if(typeof id === 'string') return get(id, collection).promise
+	else return Promise.all(id.map((item) => get(item, collection).promise))
+}
 
-exports.successfn = (id) => get(id).resolve
+exports.id = (id) => get(id, globalCollection)
+exports.successfn = (id) => get(id, globalCollection).resolve
+exports.failfn = (id) => get(id, globalCollection).reject
+exports.when = (id) => getPromise(id, globalCollection)
 
-exports.failfn = (id) => get(id).reject
+exports.build = function(){
+	
+	let localCollection = {}
 
-exports.when = (id) => {
-	if(typeof id === 'string') return get(id).promise
-	else return Promise.all(id.map((item) => get(item).promise))
-} 
-
+	return {
+		id: (id) => get(id, localCollection),
+		successfn: (id) => get(id, localCollection).resolve,
+		failfn: (id) => get(id, localCollection).reject,
+		when: (id) => getPromise(id, localCollection)
+	}
+}
