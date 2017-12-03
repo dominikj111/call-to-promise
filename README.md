@@ -29,3 +29,4 @@ Multiple arguments are wrapped into object, because resolve and reject functions
     countIn(3, 4, c2p.successfn('id'))
     c2p.when('id').then(console.log) // -> { '0': { '0': 7, '1': 12, '2': -1 }}
 
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
