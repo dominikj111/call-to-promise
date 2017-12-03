@@ -1,22 +1,26 @@
-
-
-
-# Still in develop ... come back soon!
-
-
-# What is it?
+## What is it?
 Library offers to create callback functions and connect it by unique id descriptor with the promise object.
 
-# How to use it?
-Just call `successfn` function to get callback and a successor.
+## How to use it?
+Just call `successfn` function to get success callback. `failfn` return fail callback.
 
-- example -
+    c2p = require('call-to-promise')
+    function countIn(a, b, resultback) {
+        resultback(a+b);
+    }
+    
+    countIn(3, 4, c2p.successfn('id'))
+    c2p.when('id').then(console.log) // -> 7
+    
+## Multiple arguments
+When success or fail callback is called with object, simple value or array, those are available as usual in the promise function.
+Multiple arguments are wrapped into object, because resolve and reject functions pass only one argument.
 
-function open(arg1, arg2, promiser.successfn('w.1'), promiser.failfn('w.1'))
-
-
-
-
-
-test for repeat fail and success -> should throw an exception
+    c2p = require('call-to-promise')
+    function countIn(a, b, resultback) {
+        resultback(a+b, a*b, a-b);
+    }
+    
+    countIn(3, 4, c2p.successfn('id'))
+    c2p.when('id').then(console.log) // -> { '0': { '0': 7, '1': 12, '2': -1 }}
 

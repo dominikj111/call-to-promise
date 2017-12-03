@@ -94,4 +94,34 @@ describe('SimpleDefer', () => {
 			expect(vrs.deferred.reject).to.throw()
 		})
 	})
+
+	describe('Argument testing', () => {
+		it('should pass one argument as usual - simple numeric value', () => {
+			vrs.deferred.resolve(1)
+			vrs.deferred.promise.then((a) => expect(a).to.eql(1))
+		})
+		
+		it('should pass one argument as usual - string value', () => {
+			vrs.deferred.resolve('hello promise')
+			vrs.deferred.promise.then((a) => expect(a).to.eql("hello promise"))
+		})
+		
+		it('should pass one argument as usual - object value', () => {
+			vrs.deferred.resolve({a: 1, b: "ab"})
+			vrs.deferred.promise.then((a) => expect(a).to.eql({a: 1, b: "ab"}))
+		})
+		
+		it('should pass more then one arguments as an array', () => {
+
+			vrs.deferred.resolve({a: 1, b: "ab"}, 2, 'd')
+
+			let testArgs = {'0':{a: 1, b: "ab"}, '1':2, '2':'d'}
+
+			vrs.deferred.promise.then((a) => {
+				for(let i = 0; i < 3; i++){
+					expect(a[i]).to.eql(testArgs[i])
+				}
+			})
+		})
+	})
 })

@@ -29,8 +29,8 @@ function Deferred() {
 	let me = this
 
 	this.promise = new Promise(function(s, f){
-		me.resolve = function() { closeIt(true); s.apply(me, arguments) } 
-		me.reject  = function() { closeIt(false); f.apply(me, arguments) }
+		me.resolve = function() { closeIt(true);  s.apply(me, arguments.length > 1 ? {'0':arguments,'length':1} : arguments)} 
+		me.reject  = function() { closeIt(false); f.apply(me, arguments.length > 1 ? {'0':arguments,'length':1} : arguments)}
 	})
 }
 

@@ -89,5 +89,17 @@ describe('Promiser', () => {
 				}
 			)
 		})
+
+		it('should throws an exception when resolve or reject is called more then once', () => {
+
+			promiser.successfn('ex-test')()
+			expect(promiser.successfn('ex-test')).to.throw()
+
+			promiser.failfn('ex-test-2')()
+			expect(promiser.failfn('ex-test-2')).to.throw()
+
+			// prevent to appear an error message ('UnhandledPromiseRejectionWarning')
+			promiser.when('ex-test-2').then(() => {}, () => {})
+		})
 	})
 })
