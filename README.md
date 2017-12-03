@@ -1,5 +1,5 @@
 [![GitHub version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=gh&type=6&v=1.0.4&x2=0)](https://d25lcipzij17d.cloudfront.net/badge.svg?id=gh&type=6&v=1.0.4&x2=0)
-
+[![Coverage Status](https://coveralls.io/repos/boennemann/badges/badge.svg)](https://coveralls.io/r/boennemann/badges)
 
 ## What is it?
 Library offers to create callback functions and connect it by unique id descriptor with the promise object.
