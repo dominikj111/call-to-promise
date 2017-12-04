@@ -18,6 +18,22 @@ describe('Promiser', () => {
 			expect(prom1.isSameObjectAs(prom1)).to.eql(true)
 			expect(prom1.isSameObjectAs(promiser.id('task-id-1'))).to.eql(false)
 		})
+		it('should throw an exception when ID is as not string value', () => {
+
+			expect(() => promiser.id(4)).to.throw()
+			expect(() => promiser.id({})).to.throw()
+			expect(() => promiser.id([])).to.throw()
+			
+			expect(() => promiser.id('abcdef')).to.not.throw()
+			expect(() => promiser.id('2')).to.not.throw()
+
+			expect(() => promiser.when('ab')).to.not.throw()
+			expect(() => promiser.when(['ab','st'])).to.not.throw()
+
+			expect(() => promiser.when({'0':'a','1':'abc',length:2})).to.throw()
+			expect(() => promiser.when(2)).to.throw()
+			expect(() => promiser.when({})).to.throw()
+		})
 	})
 	describe('Return promise and normal chaining', () => {
 		it('should offer direct when to return a promise for chaining as usual', () => {

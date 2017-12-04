@@ -1,17 +1,23 @@
 'use strict'
 
 let simdef = require('./simpledefer.js')
+let uti = require('./utilities.js')
 
 let globalCollection = {}
 
 function get(id, collection){
+	if(uti.isNotString(id)) throw("ID has to be 'string' only")
 	if(!collection[id]) collection[id] = simdef.defer()
 	return collection[id]
 }
 
 function getPromise(id, collection){
-	if(typeof id === 'string') return get(id, collection).promise
-	else return Promise.all(id.map((item) => get(item, collection).promise))
+
+	if(uti.isString(id)) return get(id, collection).promise
+	
+	if(uti.isArrayOfStrings(id)) return Promise.all(id.map((item) => get(item, collection).promise))
+	
+	throw("getPromise expecting id(string) or id(array<string>)")
 }
 
 exports.id = (id) => get(id, globalCollection)
