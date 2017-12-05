@@ -1,4 +1,4 @@
-[![GitHub version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=gh&type=6&v=1.0.8&x2=0)](https://d25lcipzij17d.cloudfront.net/badge.svg?id=gh&type=6&v=1.0.8&x2=0)
+[![GitHub version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=gh&type=6&v=1.0.9&x2=0)](https://d25lcipzij17d.cloudfront.net/badge.svg?id=gh&type=6&v=1.0.9&x2=0)
 [![Coverage Status](https://coveralls.io/repos/boennemann/badges/badge.svg)](https://coveralls.io/r/boennemann/badges)
 [![Dependency Status](https://david-dm.org/dwyl/esta.svg)](https://david-dm.org/dwyl/esta)
 
@@ -52,7 +52,7 @@ Multiple arguments are wrapped into object, because resolve and reject functions
         else console.log(data)
     })
 
-## Nuance
+## Nuance 1
 `c2p = require('call-to-promise')` returning global object which could be used from any place and work with same promise as has been used on other place of project according to ID.
 
 `c3p = require('call-to-promise').build()` on other side creating local object and cannot share promise with other parts of your project.
@@ -66,5 +66,32 @@ Multiple arguments are wrapped into object, because resolve and reject functions
     // c3p.id('id').resolve(4) // -> it will throw an exception
     
     // output -> 1 and 2
+
+## Nuance 2 - multi-when
+It is possible to wait for resolve of multiple promises.
+
+    function sum(a, b, cb) { cbk(a+b) }
+
+    c2p.when(['ab.2','ab.1','another']).then((a) => expect(a).to.eql([8,5,'test']))
+    
+    sum(1, 4, c2p.successfn('ab.1'))
+    c2p.id('another').resolve('test')
+    sum(3, 5, c2p.successfn('ab.2'))
+
+## API
+`c2b: promiser object`
+. function id(string) -> deferred object
+. function successfn(string) -> solve callback - **pointing to resolve fn from deferred**
+. function failfn(string) -> reject callback - **pointing to reject fn from deferred**
+. function when(string|array<string>) -> thenable object
+. function build() -> new promiser object
+
+`deferred object`
+. funciton isPending() -> true|false
+. function isSucceed() -> true|false
+. function isFailed() -> true|false
+. function isSameObjectAs() -> true|false - **test if two pointer referencing same object**
+. function resolve() -> void - **it can pass multiple arguments, see note above**
+. function reject() -> void - **it can pass multiple arguments, see note above**
 
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
