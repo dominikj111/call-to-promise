@@ -1,6 +1,6 @@
 {
   "name": "call-to-promise",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Promiser is simple callback wrapper library. It generate, store and create a promise for any callback and pass arguments as expected.",
   "main": "index.js",
   "scripts": {
@@ -23,7 +23,7 @@
   "author": "domino2",
   "license": "ISC",
   "devDependencies": {
-    "chai": "^4.3.4",
-    "mocha": "^8.3.2"
+    "chai": "^4.3.6",
+    "mocha": "^9.2.2"
   }
 }
