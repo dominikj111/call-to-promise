@@ -1,0 +1,4 @@
+node_modules
+tests
+*prettierrc.js
+*eslintrc.js

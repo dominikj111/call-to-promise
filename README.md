@@ -3,20 +3,23 @@
 [![Dependency Status](https://david-dm.org/dwyl/esta.svg)](https://david-dm.org/dwyl/esta)
 
 ## What is it?
+
 Library offers to create callback functions and connect it by unique id descriptor with the promise object.
 
 ## How to use it?
+
 Just call `successfn` function to get success callback. `failfn` return fail callback.
 
     c2p = require('call-to-promise')
     function countIn(a, b, resultback) {
         resultback(a+b);
     }
-    
+
     countIn(3, 4, c2p.successfn('id'))
     c2p.when('id').then(console.log) // -> 7
-    
+
 ## Multiple arguments
+
 When success or fail callback is called with object, simple value or array, those are available as usual in the promise function.
 Multiple arguments are wrapped into object, because resolve and reject functions pass only one argument.
 
@@ -24,7 +27,7 @@ Multiple arguments are wrapped into object, because resolve and reject functions
     function countIn(a, b, resultback) {
         resultback(a+b, a*b, a-b);
     }
-    
+
     countIn(3, 4, c2p.successfn('id'))
     c2p.when('id').then(console.log) // -> { '0': { '0': 7, '1': 12, '2': -1 }}
 
@@ -53,6 +56,7 @@ Multiple arguments are wrapped into object, because resolve and reject functions
     })
 
 ## Nuance 1
+
 `c2p = require('call-to-promise')` returning global object which could be used from any place and work with same promise as has been used on other place of project according to ID.
 
 `c3p = require('call-to-promise').build()` on other side creating local object and cannot share promise with other parts of your project.
@@ -64,22 +68,25 @@ Multiple arguments are wrapped into object, because resolve and reject functions
     // c2p.id('id').resolve(3) // -> it will throw an exception
     c3p.id('id').resolve(2)
     // c3p.id('id').resolve(4) // -> it will throw an exception
-    
+
     // output -> 1 and 2
 
 ## Nuance 2 - multi-when
+
 It is possible to wait for resolve of multiple promises.
 
     function sum(a, b, cb) { cbk(a+b) }
 
     c2p.when(['ab.2','ab.1','another']).then((a) => expect(a).to.eql([8,5,'test']))
-    
+
     sum(1, 4, c2p.successfn('ab.1'))
     c2p.id('another').resolve('test')
     sum(3, 5, c2p.successfn('ab.2'))
 
 ## API
+
 `c2b: promiser object`
+
 - function id(string): deferred object
 - function successfn(string): solve callback - **pointing to resolve fn from deferred**
 - function failfn(string): reject callback - **pointing to reject fn from deferred**
@@ -87,6 +94,7 @@ It is possible to wait for resolve of multiple promises.
 - function build(): new promiser object
 
 `deferred object`
+
 - funciton isPending(): true|false
 - function isSucceed(): true|false
 - function isFailed(): true|false
