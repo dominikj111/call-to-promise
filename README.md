@@ -2,6 +2,7 @@
 [![Coverage Status](https://coveralls.io/repos/boennemann/badges/badge.svg)](https://coveralls.io/r/boennemann/badges)
 [![JavaScript Style Guide: Good Parts](https://img.shields.io/badge/code%20style-goodparts-brightgreen.svg?style=flat)](https://github.com/dwyl/goodparts "JavaScript The Good Parts")
 [![Dependency status](https://deps.rs/repo/github/jonhoo/hashbag/status.svg)](https://deps.rs/repo/github/jonhoo/hashbag)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 
 ## What is it?
 
@@ -102,5 +103,3 @@ It is possible to wait for resolve of multiple promises.
 - function isSameObjectAs(): true|false - **test if two pointer referencing same object**
 - function resolve(): void - **it can pass multiple arguments, see note above**
 - function reject(): void - **it can pass multiple arguments, see note above**
-
-[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
