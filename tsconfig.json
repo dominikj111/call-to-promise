@@ -1,0 +1,15 @@
+{
+  "include": ["src/**/*"],
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "declarationMap": true,
+    "strict": false,
+    "target": "ES5",
+    "module": "commonJS",
+    "moduleResolution": "node",
+    "lib": ["ES5"]
+  }
+}
