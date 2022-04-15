@@ -1,4 +1,6 @@
 node_modules
 tests
+dist
 *prettierrc.js
 *eslintrc.js
+webpack.config.js
