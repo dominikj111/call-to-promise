@@ -1,44 +1,24 @@
 'use strict';
 
-var i;
-
-function isStringType (value) {
+/**
+ * Function tests if the passed value is a string.
+ *
+ * @param {*} value Parameter to check
+ * @returns {boolean} It returns true if the parameter is a string
+ */
+function isString (value) {
   return typeof value === 'string';
 }
 
-function isArrayLikeOfStrings (value) {
-  if (typeof value.length === 'undefined') {
-    return false;
-  }
-
-  if (typeof value === 'string') {
-    return false;
-  }
-
-  for (i = 0; i < value.length; i++) {
-    if (typeof value[i] !== 'string') {
-      return false;
-    }
-  }
-
-  return true;
-}
-
+/**
+ * Function tests if the passed value is an array of strings.
+ *
+ * @param {*} value Possible array of strings
+ * @returns {boolean} It returns true if the parameter is an array of strings
+ */
 function isArrayOfStrings (value) {
-  return isArrayLikeOfStrings(value) && Boolean(value.map);
+  return Array.isArray(value) && value.every(isString);
 }
 
-exports.isString = isStringType;
-exports.isNotString = function (v) {
-  return !isStringType(v);
-};
-
-exports.isArrayLikeOfStrings = isArrayLikeOfStrings;
-exports.isNotArrayLikeOfStrings = function (v) {
-  return !isArrayLikeOfStrings(v);
-};
-
+exports.isString = isString;
 exports.isArrayOfStrings = isArrayOfStrings;
-exports.isNotArrayOfStrings = function (v) {
-  return !isArrayOfStrings(v);
-};
