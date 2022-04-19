@@ -3,4 +3,6 @@ tests
 dist
 *prettierrc.js
 *eslintrc.js
-webpack.config.js
+webpack.*.js
+jest.config.js
+babel.config.js
