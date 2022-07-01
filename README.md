@@ -15,6 +15,7 @@ There are couple options how to get it into your project.
 2. you typing vanilla js and you want to import it, `<import src="https://raw.githubusercontent.com/domino2/call-to-promise/master/dist/umd.min.js" />` what will store the call-to-promise into window.c2p,
 3. you using umd modules in the browser, `import * as c2p from "https://raw.githubusercontent.com/domino2/call-to-promise/master/dist/module.min.mjs";`
 4. or you doing Deno application, `import * as c2p from "https://raw.githubusercontent.com/domino2/call-to-promise/master/dist/module.min.mjs";` ,
+5. node.js application `c2p = require('call-to-promise')`
 
 The github raw files cannot be used as I did above to import the library. For more details read [this](https://github.blog/2013-04-24-heads-up-nosniff-header-support-coming-to-chrome-and-firefox/).
 
