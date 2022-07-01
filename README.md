@@ -17,7 +17,7 @@ There are couple options how to get it into your project.
 4. or you doing Deno application, `import * as c2p from "https://raw.githubusercontent.com/domino2/call-to-promise/master/dist/module.min.mjs";` ,
 5. node.js application `c2p = require('call-to-promise')`
 
-**The github raw files cannot be used as I did above to import the library.** For more details read [this](https://github.blog/2013-04-24-heads-up-nosniff-header-support-coming-to-chrome-and-firefox/).
+**The github raw files cannot be used as I did above to import the library.** For more details read [this](https://github.blog/2013-04-24-heads-up-nosniff-header-support-coming-to-chrome-and-firefox/). In case you work in browser, store the dist file locally or on the server.
 
 After that, just call `successfn` function to get success callback. `failfn` return fail callback.
 
