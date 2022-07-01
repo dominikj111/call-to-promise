@@ -7,11 +7,13 @@
     <title>HTML test file</title>
   </head>
   <body>
-    <script src="dist/umd.min.js"></script>
-    <!-- to test module, run "npx http-server" in the cli and go to the browser console on provided url -->
-    <!-- <script type="module">
-        import * as c2p from './dist/module.min.mjs';
-        console.log(c2p)
+    <!-- <script src="dist/umd.min.js"></script>
+    <script>
+      console.log(c2p);
     </script> -->
+    <script type="module" defer>
+      import * as c2p from './dist/module.min.mjs';
+      console.log(c2p);
+    </script>
   </body>
 </html>

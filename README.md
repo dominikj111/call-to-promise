@@ -1,7 +1,7 @@
 [![GitHub version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=gh&type=6&v=1.0.12&x2=0)](https://d25lcipzij17d.cloudfront.net/badge.svg?id=gh&type=6&v=1.0.12&x2=0)
 [![Coverage Status](https://coveralls.io/repos/boennemann/badges/badge.svg)](https://coveralls.io/r/boennemann/badges)
 [![JavaScript Style Guide: Good Parts](https://img.shields.io/badge/code%20style-goodparts-brightgreen.svg?style=flat)](https://github.com/dwyl/goodparts "JavaScript The Good Parts")
-[![Dependency status](https://deps.rs/repo/github/jonhoo/hashbag/status.svg)](https://deps.rs/repo/github/jonhoo/hashbag)
+[![dependency status](https://deps.rs/crate/autocfg/1.1.0/status.svg)](https://deps.rs/crate/autocfg/1.1.0)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 
 ## What is it?
@@ -10,7 +10,15 @@ Library offers to create callback functions and connect it by unique id descript
 
 ## How to use it?
 
-Just call `successfn` function to get success callback. `failfn` return fail callback.
+There are couple options how to get it into your project.
+1. You using npm/yarn and you want to install it with it, so do `npm i call-to-promise` and then import it `import c2p from "call-to-promise";`,
+2. you typing vanilla js and you want to import it, `<import src="https://raw.githubusercontent.com/domino2/call-to-promise/master/dist/umd.min.js" />` what will store the call-to-promise into window.c2p,
+3. you using umd modules in the browser, `import * as c2p from "https://raw.githubusercontent.com/domino2/call-to-promise/master/dist/module.min.mjs";`
+4. or you doing Deno application, `import * as c2p from "https://raw.githubusercontent.com/domino2/call-to-promise/master/dist/module.min.mjs";` ,
+
+The github raw files cannot be used as I did above to import the library. For more details read [this](https://github.blog/2013-04-24-heads-up-nosniff-header-support-coming-to-chrome-and-firefox/).
+
+After that, just call `successfn` function to get success callback. `failfn` return fail callback.
 
     c2p = require('call-to-promise')
     function countIn(a, b, resultback) {
