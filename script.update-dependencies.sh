@@ -23,10 +23,12 @@ npm run test
 
 git add package*
 
-if [[ $(git commit -m 'Update dev dependencies' | grep 'nothing to commit') == '' ]]; then
-    echo "nothing to commit"
-else
+if [[ "$(echo $(git commit -m 'Update dev dependencies') | grep 'nothing to commit')" == "" ]]; then
     git push --force origin feature/dependencies-update
+else
+    echo "-----------------"
+    echo "nothing to commit"
+    echo "-----------------"
 fi
 
 git checkout master
