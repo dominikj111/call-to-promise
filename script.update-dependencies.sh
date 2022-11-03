@@ -24,6 +24,7 @@ npm run test
 git add package*
 
 if [[ "$(echo $(git commit -m 'Update dev dependencies') | grep 'nothing to commit')" == "" ]]; then
+    git checkout .
     git push --force origin feature/dependencies-update
 else
     echo "-----------------"
