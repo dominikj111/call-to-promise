@@ -29,7 +29,7 @@ else
     git push --force origin feature/dependencies-update
 fi
 
-goo master
+git checkout master
 git pull
 
 git branch -D feature/dependencies-update
