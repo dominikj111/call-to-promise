@@ -8,7 +8,8 @@
     "lint-fix": "prettier --config .prettierrc.js -w src && eslint src --fix",
     "lint": "goodparts src",
     "build": "webpack --config webpack.umd.js --mode production && webpack --config webpack.module.js --mode production",
-    "build-types": "tsc"
+    "build-types": "tsc",
+    "update-dependencies": "CURRENT=$(git branch --show-current) && git stash && goo master && git pull && git checkout -b feature/dependencies-update && npx --yes npm-check-updates -u && npm i && npm run build && npm run test && git add package* && git commit -m 'Update dev dependencies' && git push --force origin feature/dependencies-update && goo master && git pull && git branch -D feature/dependencies-update && goo $CURRENT && CURRENT=0 && git stash pop"
   },
   "keywords": [
     "promise",
