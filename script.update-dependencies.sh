@@ -8,7 +8,12 @@ if [[ $CURRENT != 'master' ]]; then
 fi
 
 git pull
-git checkout -b feature/dependencies-update
+
+if [[ $(git branch | grep feature/dependencies-update) == '' ]]; then
+    git checkout -b feature/dependencies-update
+else
+    git checkout feature/dependencies-update
+fi
 
 npx --yes npm-check-updates -u
 npm i
