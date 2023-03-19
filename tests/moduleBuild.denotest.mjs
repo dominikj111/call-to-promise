@@ -20,4 +20,4 @@ c2pInner.when('a').then(function (entry) {
 });
 c2pInner.successfn('a')(3);
 
-console.log('√ moduleBuild.denotest.js: All tests passed');
+console.log('√ moduleBuild.denotest.mjs: All tests passed');

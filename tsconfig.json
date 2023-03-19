@@ -10,6 +10,7 @@
     "target": "ES5",
     "module": "commonJS",
     "moduleResolution": "node",
-    "lib": ["ES5"]
+    "lib": ["ES5"],
+    "outDir": "./types",
   }
 }
