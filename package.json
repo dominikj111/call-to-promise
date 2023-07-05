@@ -9,7 +9,8 @@
     "lint": "goodparts src",
     "build": "webpack --config webpack.umd.js --mode production && webpack --config webpack.module.js --mode production",
     "build-types": "tsc",
-    "update-dependencies": "sh script.update-dependencies.sh"
+    "update-dependencies": "sh script.update-dependencies.sh",
+    "publint": "npx publint"
   },
   "keywords": [
     "promise",
@@ -28,15 +29,15 @@
   "author": "domino2",
   "license": "ISC",
   "devDependencies": {
-    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-env": "^7.22.6",
     "chai": "^4.3.7",
     "clean-webpack-plugin": "^4.0.0",
-    "eslint": "^8.36.0",
-    "goodparts": "^1.3.0",
+    "eslint": "^8.44.0",
+    "goodparts": "^1.2.1",
     "mocha": "^10.2.0",
-    "prettier": "^2.8.4",
-    "typescript": "^5.0.2",
-    "webpack": "^5.76.2",
-    "webpack-cli": "^5.0.1"
+    "prettier": "^2.8.8",
+    "typescript": "^5.1.6",
+    "webpack": "^5.88.1",
+    "webpack-cli": "^5.1.4"
   }
 }
