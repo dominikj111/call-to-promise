@@ -1,4 +1,6 @@
-[![GitHub version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=gh&type=6&v=2.0.3&x2=0)](https://d25lcipzij17d.cloudfront.net/badge.svg?id=gh&type=6&v=2.0.3&x2=0)
+<!-- markdownlint-disable MD041 -->
+
+[![GitHub version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=gh&type=6&v=2.0.4&x2=0)](https://d25lcipzij17d.cloudfront.net/badge.svg?id=gh&type=6&v=2.0.4&x2=0)
 [![Coverage Status](https://coveralls.io/repos/boennemann/badges/badge.svg)](https://coveralls.io/r/boennemann/badges)
 [![JavaScript Style Guide: Good Parts](https://img.shields.io/badge/code%20style-goodparts-brightgreen.svg?style=flat)](https://github.com/dwyl/goodparts "JavaScript The Good Parts")
 [![dependency status](https://deps.rs/crate/autocfg/1.1.0/status.svg)](https://deps.rs/crate/autocfg/1.1.0)
@@ -11,6 +13,7 @@ Library offers to create callback functions and connect it by unique id descript
 ## How to use it?
 
 There are couple options how to get it into your project.
+
 1. You using npm/yarn and you want to install it with it, so do `npm i call-to-promise` and then import it `import c2p from "call-to-promise";`,
 2. you typing vanilla js and you want to import it, `<import src="https://raw.githubusercontent.com/domino2/call-to-promise/master/dist/umd.min.js" />` what will store the call-to-promise into window.c2p,
 3. you using umd modules in the browser, `import * as c2p from "https://raw.githubusercontent.com/domino2/call-to-promise/master/dist/module.min.mjs";`
@@ -101,7 +104,7 @@ It is possible to wait for resolve of multiple promises.
 - function id(string): deferred object
 - function successfn(string): solve callback - **pointing to resolve fn from deferred**
 - function failfn(string): reject callback - **pointing to reject fn from deferred**
-- function when(string|array<string>): thenable object
+- function when(string|string[]): thenable object
 - function build(): new promiser object
 
 `deferred object`
