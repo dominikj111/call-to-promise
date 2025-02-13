@@ -1,7 +1,7 @@
 {
   "name": "call-to-promise",
   "version": "2.0.5",
-  "description": "Promiser is simple callback wrapper library. It generate, store and create a promise for any callback and pass arguments as expected.",
+  "description": "A lightweight, production-ready, universal library for transforming callback-style functions into Promise-based ones. Works seamlessly across Node.js, Deno, and browsers.",
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
@@ -13,14 +13,17 @@
     "publint": "npx publint"
   },
   "keywords": [
-    "Promise",
+    "promise",
     "callback",
-    "wrapper",
-    "promise-store",
-    "callback-wrapper",
-    "promiser",
+    "async",
+    "promise-wrapper",
     "callback-to-promise",
-    "call-to-promise"
+    "promisify",
+    "universal",
+    "typescript",
+    "node",
+    "deno",
+    "browser"
   ],
   "repository": {
     "type": "git",
