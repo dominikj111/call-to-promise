@@ -4,6 +4,17 @@
   "description": "A lightweight, production-ready, universal library for transforming callback-style functions into Promise-based ones. Works seamlessly across Node.js, Deno, and browsers.",
   "main": "index.js",
   "types": "index.d.ts",
+  "type": "commonjs",
+  "files": [
+    "dist",
+    "src",
+    "types",
+    "index.js",
+    "index.d.ts",
+    "indexBrowser.js",
+    "LICENSE",
+    "README.md"
+  ],
   "scripts": {
     "build": "rm -rf ./dist/* && webpack --config webpack.umd.js --mode production && webpack --config webpack.module.js --mode production",
     "build-types": "rm -rf ./types/* && tsc",
@@ -27,20 +38,20 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/dominikj111/call-to-promise.git"
+    "url": "git+https://github.com/dominikj111/call-to-promise.git"
   },
   "author": "dominikj111",
   "license": "Apache-2.0",
   "devDependencies": {
-    "@babel/preset-env": "^7.22.20",
-    "chai": "^4.3.10",
-    "clean-webpack-plugin": "^4.0.0",
-    "eslint": "^8.51.0",
-    "goodparts": "^1.3.0",
-    "mocha": "^10.2.0",
-    "prettier": "^3.0.3",
-    "typescript": "^5.2.2",
-    "webpack": "^5.88.2",
-    "webpack-cli": "^5.1.4"
+    "@babel/preset-env": "7.22.20",
+    "chai": "4.3.10",
+    "clean-webpack-plugin": "4.0.0",
+    "eslint": "8.51.0",
+    "goodparts": "1.3.0",
+    "mocha": "10.2.0",
+    "prettier": "3.0.3",
+    "typescript": "5.2.2",
+    "webpack": "5.88.2",
+    "webpack-cli": "5.1.4"
   }
 }
