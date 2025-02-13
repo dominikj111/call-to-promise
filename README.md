@@ -9,7 +9,7 @@
 
 A lightweight, production-ready, universal library for transforming callback-style functions into Promise-based ones. Works seamlessly across Node.js, Deno, and browsers.
 
-> **📌 Maintenance Status**: This library is well-written, thoroughly tested, and production-ready, but is now archived. Modern JavaScript provides built-in solutions for most promise-related use cases. However, this library remains a reliable choice with zero dependencies (thus zero vulnerabilities) if you need its specific ID-based promise storage feature.
+> **📌 Maintenance Status**: This library is in maintenance mode. It is well-written, thoroughly tested, and production-ready. Modern JavaScript provides built-in solutions for most promise-related use cases. However, this library remains a reliable choice with zero dependencies (thus zero vulnerabilities) if you need its specific ID-based promise storage feature. While no new features are being developed, bug reports are monitored and fixes are provided when needed.
 
 ## Features
 
