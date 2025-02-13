@@ -1,6 +1,6 @@
 {
   "name": "call-to-promise",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "description": "A lightweight, production-ready, universal library for transforming callback-style functions into Promise-based ones. Works seamlessly across Node.js, Deno, and browsers.",
   "main": "index.js",
   "types": "index.d.ts",

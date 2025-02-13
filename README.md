@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD041 -->
 
-[![GitHub version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=gh&type=6&v=2.0.5&x2=0)](https://d25lcipzij17d.cloudfront.net/badge.svg?id=gh&type=6&v=2.0.5&x2=0)
+[![GitHub version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=gh&type=6&v=2.0.6&x2=0)](https://d25lcipzij17d.cloudfront.net/badge.svg?id=gh&type=6&v=2.0.6&x2=0)
 [![Coverage Status](https://coveralls.io/repos/boennemann/badges/badge.svg)](https://coveralls.io/r/boennemann/badges)
 [![JavaScript Style Guide: Good Parts](https://img.shields.io/badge/code%20style-goodparts-brightgreen.svg?style=flat)](https://github.com/dwyl/goodparts 'JavaScript The Good Parts')
 [![dependency status](https://deps.rs/crate/autocfg/1.1.0/status.svg)](https://deps.rs/crate/autocfg/1.1.0)
@@ -8,6 +8,8 @@
 # call-to-promise
 
 A lightweight, production-ready, universal library for transforming callback-style functions into Promise-based ones. Works seamlessly across Node.js, Deno, and browsers.
+
+> **📌 Maintenance Status**: This library is well-written, thoroughly tested, and production-ready, but is now archived. Modern JavaScript provides built-in solutions for most promise-related use cases. However, this library remains a reliable choice with zero dependencies (thus zero vulnerabilities) if you need its specific ID-based promise storage feature.
 
 ## Features
 
@@ -104,6 +106,69 @@ const c2p = require('call-to-promise');
 // Local instance (isolated)
 const localC2p = require('call-to-promise').build();
 ```
+
+## Modern Alternatives
+
+While this library remains reliable, here are modern approaches to handle similar scenarios:
+
+### 1. Using Node.js util.promisify
+
+```javascript
+const { promisify } = require('util');
+const fs = require('fs');
+
+// Convert callback-based function to promise-based
+const readFileAsync = promisify(fs.readFile);
+
+// Use it
+async function readConfig() {
+  try {
+    const data = await readFileAsync('/etc/hosts', 'utf8');
+    console.log(data);
+  } catch (err) {
+    console.error(err);
+  }
+}
+```
+
+### 2. Using Promise Constructor
+
+```javascript
+function promisifyFunction(fn) {
+  return (...args) => {
+    return new Promise((resolve, reject) => {
+      fn(...args, (err, result) => {
+        if (err) reject(err);
+        else resolve(result);
+      });
+    });
+  };
+}
+
+// Example usage
+const readFilePromise = promisifyFunction(fs.readFile);
+readFilePromise('/etc/hosts', 'utf8').then(console.log).catch(console.error);
+```
+
+### 3. Modern APIs (Already Promise-based)
+
+```javascript
+// Modern Web APIs are already promise-based
+fetch('https://api.example.com/data')
+  .then((response) => response.json())
+  .then((data) => console.log(data))
+  .catch((error) => console.error(error));
+
+// Modern Node.js APIs often provide promise versions
+const { readFile } = require('fs/promises');
+readFile('/etc/hosts', 'utf8').then(console.log).catch(console.error);
+```
+
+### When to Use This Library?
+
+- You need to store and manage promises by ID
+- You're working with legacy callback-based code and need a consistent way to handle promise creation and storage
+- You want a zero-dependency solution that works across all JavaScript environments
 
 ## API Reference
 
