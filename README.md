@@ -1,17 +1,21 @@
-<!-- markdownlint-disable MD041 -->
-
-[![GitHub version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=gh&type=6&v=2.0.7&x2=0)](https://d25lcipzij17d.cloudfront.net/badge.svg?id=gh&type=6&v=2.0.7&x2=0)
-[![Coverage Status](https://coveralls.io/repos/boennemann/badges/badge.svg)](https://coveralls.io/r/boennemann/badges)
-[![JavaScript Style Guide: Good Parts](https://img.shields.io/badge/code%20style-goodparts-brightgreen.svg?style=flat)](https://github.com/dwyl/goodparts 'JavaScript The Good Parts')
-[![dependency status](https://deps.rs/crate/autocfg/1.1.0/status.svg)](https://deps.rs/crate/autocfg/1.1.0)
-
 # call-to-promise
 
-A lightweight, production-ready, universal library for transforming callback-style functions into Promise-based ones. Works seamlessly across Node.js, Deno, and browsers.
+[![npm](https://img.shields.io/npm/v/call-to-promise)](https://www.npmjs.com/package/call-to-promise)
+[![dependencies](https://img.shields.io/badge/production%20dependencies-0-brightgreen.svg)](https://github.com/dominikj111/prutill/blob/main/package.json)
+[![Coverage Status](https://coveralls.io/repos/boennemann/badges/badge.svg)](https://coveralls.io/r/boennemann/badges)
+[![License](https://img.shields.io/github/license/dominikj111/prutill)](https://github.com/dominikj111/prutill/blob/main/LICENSE)
+[![JavaScript Style Guide: Good Parts](https://img.shields.io/badge/code%20style-goodparts-brightgreen.svg?style=flat)](https://github.com/dwyl/goodparts 'JavaScript The Good Parts')
 
-> **📌 Maintenance Status**: This library is in maintenance mode. It is well-written, thoroughly tested, and production-ready. Modern JavaScript provides built-in solutions for most promise-related use cases. However, this library remains a reliable choice with zero dependencies (thus zero vulnerabilities) if you need its specific ID-based promise storage feature. While no new features are being developed, bug reports are monitored and fixes are provided when needed.
+A lightweight, production-ready, universal library for transforming callback-style functions into Promise-based ones.
+Works seamlessly across Node.js, Deno, and browsers.
 
-## Features
+> **📌 Maintenance Status**: This library is in maintenance mode. It is well-written, thoroughly tested, and production-ready.
+> Modern JavaScript provides built-in solutions for most promise-related use cases. However,
+> this library remains a reliable choice with zero dependencies (thus zero vulnerabilities)
+> if you need its specific ID-based promise storage feature. While no new features are being developed,
+> bug reports are monitored and fixes are provided when needed.
+
+## ✨ Features
 
 - 🌐 **Universal Compatibility**: Works in Node.js, Deno, and browsers
 - 🔒 **Type Safety**: Full TypeScript support with type definitions
@@ -20,7 +24,7 @@ A lightweight, production-ready, universal library for transforming callback-sty
 - 📦 **Multiple Module Formats**: UMD and ES Module bundles available
 - ✅ **Production Ready**: Battle-tested and fully covered with tests
 
-## Installation
+## 🛠️ Installation
 
 ### NPM/Yarn
 
@@ -170,7 +174,7 @@ readFile('/etc/hosts', 'utf8').then(console.log).catch(console.error);
 - You're working with legacy callback-based code and need a consistent way to handle promise creation and storage
 - You want a zero-dependency solution that works across all JavaScript environments
 
-## API Reference
+## 📚 API Reference
 
 ### Main Functions
 
@@ -194,3 +198,9 @@ Apache-2.0 © dominikj111
 
 This library is licensed under the Apache License, Version 2.0. You may obtain a copy of the License at
 <http://www.apache.org/licenses/LICENSE-2.0>
+
+---
+
+<div align="center">
+Made with ❤️ because I love coding
+</div>
