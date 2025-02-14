@@ -11,9 +11,7 @@
     "types",
     "index.js",
     "index.d.ts",
-    "indexBrowser.js",
-    "LICENSE",
-    "README.md"
+    "indexBrowser.js"
   ],
   "scripts": {
     "build": "rm -rf ./dist/* && webpack --config webpack.umd.js --mode production && webpack --config webpack.module.js --mode production",
