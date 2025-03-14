@@ -3,7 +3,7 @@
 [![npm](https://img.shields.io/npm/v/call-to-promise)](https://www.npmjs.com/package/call-to-promise)
 [![dependencies](https://img.shields.io/badge/production%20dependencies-0-brightgreen.svg)](https://github.com/dominikj111/prutill/blob/main/package.json)
 [![Coverage Status](https://coveralls.io/repos/boennemann/badges/badge.svg)](https://coveralls.io/r/boennemann/badges)
-[![License](https://img.shields.io/github/license/dominikj111/prutill)](https://github.com/dominikj111/prutill/blob/main/LICENSE)
+![BSD License](https://img.shields.io/badge/license-BSD%203--Clause-blue.svg)
 [![JavaScript Style Guide: Good Parts](https://img.shields.io/badge/code%20style-goodparts-brightgreen.svg?style=flat)](https://github.com/dwyl/goodparts 'JavaScript The Good Parts')
 
 A lightweight, production-ready, universal library for transforming callback-style functions into Promise-based ones.
@@ -14,6 +14,10 @@ Works seamlessly across Node.js, Deno, and browsers.
 > this library remains a reliable choice with zero dependencies (thus zero vulnerabilities)
 > if you need its specific ID-based promise storage feature. While no new features are being developed,
 > bug reports are monitored and fixes are provided when needed.
+
+## 🚀 Who's Using This?
+
+If you use this project, I'd love to know! Feel free to reach out or star this repo.
 
 ## ✨ Features
 
