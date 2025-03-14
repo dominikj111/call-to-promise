@@ -1,0 +1,15 @@
+Automating the deployment
+
+git add package.json package-lock.json
+git commit -m "Release vX.Y.Z"
+git tag vX.Y.Z
+git push origin main --tags
+npm publish
+
+---
+
+npm version patch   # 1.0.0 → 1.0.1
+npm version minor   # 1.0.0 → 1.1.0
+npm version major   # 1.0.0 → 2.0.0
+git push origin main --tags
+npm publish
