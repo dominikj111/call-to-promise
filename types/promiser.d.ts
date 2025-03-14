@@ -8,9 +8,10 @@ export function build(): {
     failfn: ((arg0: string) => PromiseResolutionFn);
     when: ((arg0: string) => Promise<any>);
 };
-export type SimpleDeferred = import('./simpledefer').SimpleDeferred;
+export type SimpleDeferred = import("./simpledefer").SimpleDeferred;
 export type Collection = {
-    [x: string]: SimpleDeferred;
+    [x: string]: simpledefer.SimpleDeferred;
 };
 export type PromiseResolutionFn = Function;
+import simpledefer = require("./simpledefer");
 //# sourceMappingURL=promiser.d.ts.map
