@@ -1,8 +1,8 @@
 Automating the deployment
 
 git add package.json package-lock.json
-git commit -m "Release vX.Y.Z"
-git tag vX.Y.Z
+gcm "chore: bump version to 2.0.8"
+git tag v2.0.8 # may add tag message
 git push origin main --tags
 npm publish
 
