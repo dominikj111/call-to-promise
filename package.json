@@ -14,8 +14,10 @@
     "indexBrowser.js"
   ],
   "scripts": {
-    "build": "rm -rf ./dist/* && webpack --config webpack.umd.js --mode production && webpack --config webpack.module.js --mode production",
+    "build": "npm run build-types && npm run build-dist",
+    "build-dist": "rm -rf ./dist/* && webpack --config webpack.umd.js --mode production && webpack --config webpack.module.js --mode production",
     "build-types": "rm -rf ./types/* && tsc",
+    "deploy": "npm run lint && npm run publint && npm run test && npm run build",
     "lint": "goodparts src",
     "test": "mocha tests/**/*Test.js && deno run ./tests/moduleBuild.denotest.mjs",
     "lint-fix": "prettier --config .prettierrc.js -w src && eslint src --fix",
