@@ -41,7 +41,7 @@
     "url": "git+https://github.com/dominikj111/call-to-promise.git"
   },
   "author": "dominikj111",
-  "license": "Apache-2.0",
+  "license": "BSD-3-Clause",
   "devDependencies": {
     "@babel/preset-env": "^7.26.9",
     "chai": "^5.2.0",
